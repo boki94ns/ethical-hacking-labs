@@ -71,7 +71,7 @@ The reconnaissance process identified a large number of publicly available subdo
 
 ### DNS Reconnaissance Overview
 
-![Screen1](screenshots/Slika 1.png)
+<img src="screenshots/Slika 1.png">
 
 ### Subdomain Enumeration Results
 
