@@ -75,22 +75,21 @@ The reconnaissance process identified a large number of publicly available subdo
 
 ### Subdomain Enumeration Results
 
-![Screen2](screenshots/Slika 2.png)
+<img src="screenshots/Slika 2.png">
 
-![Screen3](screenshots/Slika 3.png)
+<img src="screenshots/Slika 3.png">
 
-![Screen4](screenshots/Slika 4.png)
+<img src="screenshots/Slika 4.png">
 
 ### AI Related Infrastructure
 
-![Screen5](screenshots/Slika 5.png)
+<img src="screenshots/Slika 5.png">
 
 ### TXT Records
 
-![Screen6](screenshots/Slika 6.png)
+<img src="screenshots/Slika 6.png">
 
-![Screen7](screenshots/Slika 7.png)
-
+<img src="screenshots/Slika 7.png">
 ---
 
 ## Conclusion
