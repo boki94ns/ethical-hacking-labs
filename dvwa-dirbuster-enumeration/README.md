@@ -1,117 +1,77 @@
 # DVWA DirBuster Enumeration Lab
+# Lab Steps
 
-## Overview
+## 1. Starting DVWA Container
 
-This lab demonstrates basic web application enumeration using OWASP DirBuster against the DVWA (Damn Vulnerable Web Application) environment running inside a Docker container on Kali Linux.
-
-The objective of the lab was to identify accessible directories and PHP files through brute-force directory enumeration techniques commonly used during penetration testing and web application reconnaissance.
-
----
-
-# Environment
-
-- Operating System: Kali Linux
-- Virtualization: Oracle VirtualBox
-- Target Application: DVWA
-- Deployment Method: Docker
-- Enumeration Tool: OWASP DirBuster
-
----
-
-# Target Setup
-
-DVWA container was started using Docker with the following command:
+The DVWA application was started inside a Docker container on Kali Linux using the following command:
 
 ```bash
 sudo docker run --rm -it -p 8080:80 vulnerables/web-dvwa
 ```
 
-The application was accessible locally at:
+This exposed the vulnerable web application locally on port 8080.
+
+![Starting DVWA](screenshots/1. Slika.png)
+
+---
+
+## 2. Configuring OWASP DirBuster
+
+OWASP DirBuster was launched and configured to target the local DVWA application running on:
 
 ```text
 http://127.0.0.1:8080
 ```
 
----
+A standard directory wordlist was used for enumeration.
 
-# Enumeration Configuration
-
-The following configuration was used in OWASP DirBuster:
-
-- Target URL:
-  ```text
-  http://127.0.0.1:8080
-  ```
-
-- Wordlist:
-  ```text
-  /usr/share/dirbuster/wordlists/directory-list-2.3-small.txt
-  ```
-
-- Recursive scanning enabled
-- PHP extension enumeration enabled
-- 10 scanning threads used
+![DirBuster Configuration](screenshots/2. Slika.png)
 
 ---
 
-# Enumeration Process
+## 3. Starting Directory Enumeration
 
-DirBuster performed recursive directory and file brute-force enumeration against the DVWA application.
+The scan was started using recursive directory and PHP file enumeration.
 
-The scan identified multiple accessible resources, including:
+The objective was to identify accessible directories and files exposed by the web application.
+
+![Enumeration Process](screenshots/3. Slika (pocetak procesa).png)
+
+---
+
+## 4. Enumeration Results
+
+DirBuster successfully identified multiple directories and PHP files including:
 
 - `/login.php`
 - `/setup.php`
-- `/security.php`
-- `/config/`
-- `/docs/`
-- `/external/`
-- `/vulnerabilities/`
+- `/config`
+- `/docs`
+- `/vulnerabilities`
 
-HTTP response codes such as `200`, `302`, and `403` were observed during enumeration.
+HTTP response codes such as `200`, `302`, and `403` were observed during the scan.
 
----
-
-# Findings
-
-The enumeration process successfully revealed:
-
-- accessible PHP application endpoints,
-- configuration-related directories,
-- documentation directories,
-- vulnerability-related paths inside the DVWA application.
-
-This demonstrates how directory enumeration can expose hidden or sensitive application resources during web reconnaissance activities.
+![Results Tree View](screenshots/4. Slika (Results tree view).png)
 
 ---
 
-# Screenshots
+## 5. DVWA Target Application
 
-## DirBuster Startup
+The target application used in this lab was DVWA (Damn Vulnerable Web Application), running locally inside a Docker container.
 
-## Target Configuration
-
-## Enumeration Process
-
-## Results Tree View
-
-## DVWA Target Application
-
----
-
-# Skills Practiced
-
-- Web Application Enumeration
-- Directory Bruteforcing
-- Docker-based Lab Setup
-- Basic Web Reconnaissance
-- Kali Linux Tool Usage
-- HTTP Response Analysis
+![DVWA Target](screenshots/Target page.png)
 
 ---
 
 # Conclusion
 
-This lab provided hands-on experience with web application reconnaissance and directory enumeration techniques using OWASP DirBuster in a controlled DVWA environment.
+This lab demonstrated basic web application enumeration techniques using OWASP DirBuster against DVWA.
 
-The exercise demonstrates how publicly accessible resources and hidden directories can be identified during the reconnaissance phase of penetration testing.
+The exercise provided practical experience with:
+
+- Directory brute-force enumeration
+- PHP file discovery
+- HTTP response analysis
+- Web application reconnaissance
+
+Such techniques are commonly used during penetration testing and security assessments.
