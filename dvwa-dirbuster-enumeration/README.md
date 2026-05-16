@@ -32,7 +32,25 @@ OWASP DirBuster was launched and configured to target the local DVWA application
 http://127.0.0.1:8080
 ```
 
-A standard directory wordlist was used for enumeration.
+The following settings were configured before starting the scan:
+
+- Scan type: List based brute force
+- Target URL: http://127.0.0.1:8080
+- Wordlist used:
+  
+```text
+/usr/share/dirbuster/wordlists/directory-list-2.3-small.txt
+```
+
+- Brute Force Dirs: Enabled
+- Brute Force Files: Enabled
+- Recursive Scanning: Enabled
+- File extension used: php
+- Threads: 10
+
+The wordlist was selected manually through the "Browse" option inside OWASP DirBuster.
+
+After configuring the scan options and selecting the wordlist, the enumeration process was started by clicking the "Start" button.
 
 <img src="./screenshots/2.%20Slika.png" width="900">
 
