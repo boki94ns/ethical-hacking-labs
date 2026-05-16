@@ -1,4 +1,13 @@
 # DVWA DirBuster Enumeration Lab
+
+## Overview
+
+This lab demonstrates basic web application enumeration using OWASP DirBuster against the DVWA (Damn Vulnerable Web Application) environment running locally on Kali Linux inside a Docker container.
+
+The objective of the lab was to identify accessible directories and PHP files through brute-force directory enumeration techniques commonly used during penetration testing and web reconnaissance.
+
+---
+
 # Lab Steps
 
 ## 1. Starting DVWA Container
@@ -11,7 +20,8 @@ sudo docker run --rm -it -p 8080:80 vulnerables/web-dvwa
 
 This exposed the vulnerable web application locally on port 8080.
 
-![Starting DVWA](screenshots/1. Slika.png)
+<img src="./screenshots/1.%20Slika.png" width="900">
+
 ---
 
 ## 2. Configuring OWASP DirBuster
@@ -24,21 +34,25 @@ http://127.0.0.1:8080
 
 A standard directory wordlist was used for enumeration.
 
-![DirBuster Configuration](screenshots/2. Slika.png)
+<img src="./screenshots/2.%20Slika.png" width="900">
+
 ---
 
 ## 3. Starting Directory Enumeration
 
-The scan was started using recursive directory and PHP file enumeration.
+The directory brute-force process was started against the DVWA target application.
 
-The objective was to identify accessible directories and files exposed by the web application.
+During this phase, DirBuster generated multiple HTTP requests in order to identify hidden directories and files.
 
-![Enumeration Started](screenshots/3. Slika (pocetak procesa).png)
+<img src="./screenshots/3.%20Slika%20(pocetak%20procesa).png" width="900">
+
 ---
 
 ## 4. Enumeration Results
 
-DirBuster successfully identified multiple directories and PHP files including:
+The scan successfully identified multiple accessible directories and PHP files within the DVWA application.
+
+Examples of discovered resources:
 
 - `/login.php`
 - `/setup.php`
@@ -46,28 +60,42 @@ DirBuster successfully identified multiple directories and PHP files including:
 - `/docs`
 - `/vulnerabilities`
 
-HTTP response codes such as `200`, `302`, and `403` were observed during the scan.
+The enumeration process also revealed HTTP response codes and response sizes useful for web application reconnaissance.
 
-![Results Tree View](screenshots/4. Slika (Results tree view).png)
+<img src="./screenshots/4.%20Slika%20(Results%20tree%20view).png" width="900">
 
 ---
 
-## 5. DVWA Target Application
+## 5. Target Web Application
 
-The target application used in this lab was DVWA (Damn Vulnerable Web Application), running locally inside a Docker container.
+The target application used during the lab was DVWA running locally inside a Docker container.
 
-![Target Application](screenshots/Target page.png)
+<img src="./screenshots/Target%20page.png" width="900">
+
+---
+
+# Tools Used
+
+- Kali Linux
+- Docker
+- DVWA (Damn Vulnerable Web Application)
+- OWASP DirBuster
+
+---
+
+# Skills Practiced
+
+- Web application reconnaissance
+- Directory enumeration
+- File enumeration
+- Basic penetration testing methodology
+- Usage of OWASP DirBuster
+- Local lab environment configuration
+
 ---
 
 # Conclusion
 
-This lab demonstrated basic web application enumeration techniques using OWASP DirBuster against DVWA.
+This lab demonstrated how directory enumeration tools such as OWASP DirBuster can be used to identify accessible resources within a web application.
 
-The exercise provided practical experience with:
-
-- Directory brute-force enumeration
-- PHP file discovery
-- HTTP response analysis
-- Web application reconnaissance
-
-Such techniques are commonly used during penetration testing and security assessments.
+The exercise provided practical experience with reconnaissance techniques frequently used during penetration testing and ethical hacking assessments.
