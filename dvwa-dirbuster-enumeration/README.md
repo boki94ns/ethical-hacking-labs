@@ -11,8 +11,7 @@ sudo docker run --rm -it -p 8080:80 vulnerables/web-dvwa
 
 This exposed the vulnerable web application locally on port 8080.
 
-![Starting DVWA](screenshots/1. Slika.png)
-
+![Starting DVWA](dvwa-dirbuster-enumeration/screenshots/1. Slika.png)
 ---
 
 ## 2. Configuring OWASP DirBuster
@@ -25,8 +24,7 @@ http://127.0.0.1:8080
 
 A standard directory wordlist was used for enumeration.
 
-![DirBuster Configuration](screenshots/2. Slika.png)
-
+![DirBuster Configuration](dvwa-dirbuster-enumeration/screenshots/2. Slika.png)
 ---
 
 ## 3. Starting Directory Enumeration
@@ -35,8 +33,7 @@ The scan was started using recursive directory and PHP file enumeration.
 
 The objective was to identify accessible directories and files exposed by the web application.
 
-![Enumeration Process](screenshots/3. Slika (pocetak procesa).png)
-
+![Enumeration Process](dvwa-dirbuster-enumeration/screenshots/3. Slika (pocetak procesa).png)
 ---
 
 ## 4. Enumeration Results
