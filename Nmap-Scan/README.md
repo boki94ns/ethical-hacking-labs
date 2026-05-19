@@ -39,7 +39,7 @@ The scan was started from the Kali Linux VM against the Windows machine on the l
 
 At this stage, Nmap confirmed that the target host was active and started a SYN stealth scan.
 
-<img src="screenshots/1. Slika.png" alt="Scan start" width="900">
+<img src="assets/1. Slika.png" alt="Scan start" width="900">
 
 ## 2. Open Ports and Services
 
@@ -59,7 +59,7 @@ Nmap detected that the host was online and found several open TCP ports.
 
 The most interesting services from a security perspective are SMB on ports `139` and `445`, RDP on port `3389`, and the Node.js Express services on ports `3000` and `3001`.
 
-<img src="screenshots/2. Slika.jfif" alt="Open ports and services" width="900">
+<img src="assets/2. Slika.jfif" alt="Open ports and services" width="900">
 
 ## 3. Service and OS Enumeration
 
@@ -76,7 +76,7 @@ Detected information included:
 
 This confirms that the Kali VM and the Windows host are on the same local network.
 
-<img src="screenshots/3. Slika.jfif" alt="Service and OS enumeration" width="900">
+<img src="assets/3. Slika.jfif" alt="Service and OS enumeration" width="900">
 
 ## 4. SMB, RDP and Scan Completion
 
@@ -104,7 +104,7 @@ The scan completed successfully and confirmed that one host was up.
 Nmap done: 1 IP address (1 host up) scanned
 ```
 
-<img src="screenshots/4. Slika.jfif" alt="SMB RDP and scan completion" width="900">
+<img src="assets/4. Slika.jfif" alt="SMB RDP and scan completion" width="900">
 
 ## Key Findings
 
